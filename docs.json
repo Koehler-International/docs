@@ -33,13 +33,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@mobilecoder.dev"
+        "href": "mailto:support@mobilecoder.ai"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://mobilecoder.dev"
+      "href": "https://mobilecoder.ai"
     }
   },
   "contextual": {
