@@ -1,0 +1,155 @@
+---
+title: "Download Your Code"
+description: "Download your complete project code and work with it anywhere"
+---
+
+## Overview
+
+MobileCoder gives you **full ownership of your code**. You can download your complete project at any time and work with it in your preferred environment — whether that's VS Code, Cursor, or any other editor.
+
+## How to Download
+
+<Steps>
+<Step title="Open Your Project">
+
+Go to your project in MobileCoder.
+
+</Step>
+
+<Step title="Click Download">
+
+Click the **Download** button in the project header.
+
+</Step>
+
+<Step title="Extract the ZIP">
+
+Your complete project downloads as a ZIP file. Extract it to your preferred location.
+
+</Step>
+</Steps>
+
+That's it! You now have your complete codebase.
+
+## What's Included
+
+Your downloaded project contains everything you need:
+
+| Content | Description |
+|---------|-------------|
+| **Source Code** | All React Native/Expo TypeScript files |
+| **package.json** | Dependencies and scripts |
+| **app.json** | Expo configuration |
+| **Assets** | Images, fonts, and other static files |
+| **Navigation** | Complete Expo Router structure |
+| **Styling** | NativeWind/Tailwind configuration |
+
+## Running Your Code Locally
+
+After downloading and extracting your project:
+
+```bash
+# Navigate to your project
+cd your-project
+
+# Install dependencies
+npm install
+
+# Start the development server
+npx expo start
+```
+
+You can then:
+
+- Press `i` to open in iOS simulator (Mac only)
+- Press `a` to open in Android emulator
+- Scan the QR code to open in Expo Go on your phone
+
+## What You Can Do With Your Code
+
+### Edit in Any IDE
+
+Open the project folder in your favorite code editor:
+
+- **VS Code** — Free, great extension ecosystem
+- **Cursor** — AI-powered editor
+- **WebStorm** — Full-featured IDE
+
+### Publish Your App
+
+Ready to put your app in the app stores?
+
+<Card
+  title="Publish with Expo Launch"
+  icon="rocket"
+  href="/publishing/expo-launch"
+>
+  The easiest way to publish — no Xcode or Android Studio needed.
+</Card>
+
+<Card
+  title="App Store"
+  icon="apple"
+  href="/publishing/app-store"
+>
+  Detailed guide for Apple App Store submission.
+</Card>
+
+<Card
+  title="Google Play"
+  icon="google-play"
+  href="/publishing/google-play"
+>
+  Detailed guide for Google Play Store submission.
+</Card>
+
+### Continue Development
+
+Once you have the code, you have full control:
+
+- Add new features
+- Integrate additional APIs
+- Hand it off to another developer
+- Use it as a starting point for a larger project
+
+## Code Preservation
+
+Your code is automatically saved in MobileCoder after every AI execution. This means:
+
+- **Always backed up**: Your work is preserved even if you close the browser
+- **Sandbox restoration**: If your sandbox expires, it's restored automatically when you return
+- **Download anytime**: You can always get the latest version of your code
+
+<Info>
+Code is saved after each AI execution. If you're testing in the live preview and haven't run the AI, those preview interactions aren't saved as code changes.
+</Info>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="download" title="Download not working">
+    Make sure your project has been built at least once. If the issue persists, try refreshing the page.
+  </Accordion>
+  <Accordion icon="npm" title="npm install failing">
+    Delete `node_modules` and `package-lock.json`, then run `npm install` again:
+    ```bash
+    rm -rf node_modules package-lock.json
+    npm install
+    ```
+  </Accordion>
+  <Accordion icon="mobile" title="Expo not starting">
+    Make sure you have Node.js installed (version 18 or higher). You can install Expo CLI globally with:
+    ```bash
+    npm install -g expo-cli
+    ```
+  </Accordion>
+  <Accordion icon="clock" title="Code seems outdated">
+    Code is saved after each AI execution. Make sure you've run the AI at least once after your latest changes.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

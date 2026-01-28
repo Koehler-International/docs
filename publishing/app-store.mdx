@@ -5,17 +5,18 @@ description: "Submit your MobileCoder app to Apple's App Store"
 
 ## Overview
 
-This guide walks you through publishing your MobileCoder app to the Apple App Store. You'll need a Mac with Xcode and an Apple Developer account.
+This guide walks you through publishing your MobileCoder app to the Apple App Store using the traditional Xcode method.
 
-<Warning>
-Before starting, make sure you've completed the [Xcode Setup](/publishing/xcode-setup) guide.
-</Warning>
+<Info>
+**Recommended**: For the easiest publishing experience, use [Expo Launch](/publishing/expo-launch) instead. It handles everything automatically without needing Xcode.
+</Info>
 
 ## Prerequisites
 
+- A **Mac** computer (Xcode only runs on macOS)
+- **Xcode** installed from the App Store
 - **Apple Developer Account** ($99/year) — [Enroll here](https://developer.apple.com/programs/)
-- **Xcode** installed and configured
-- Your MobileCoder project code downloaded
+- Your MobileCoder project code ([downloaded](/publishing/code-export))
 - App icon and screenshots ready
 
 ## Step 1: Prepare Your App
@@ -90,7 +91,13 @@ Click **Create** to set up your app in App Store Connect.
 
 ### Build in Xcode
 
-1. Open your project in Xcode (see [Xcode Setup](/publishing/xcode-setup))
+1. Generate the iOS project and open in Xcode:
+   ```bash
+   cd your-project
+   npm install
+   npx expo prebuild -p ios
+   xed ios
+   ```
 2. Select **Any iOS Device** from the device dropdown
 3. Go to **Product → Archive**
 4. Wait for the build to complete

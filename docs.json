@@ -35,15 +35,14 @@
             "pages": [
               "backend/do-you-need-backend",
               "backend/supabase-integration",
-              "backend/supabase-oauth",
-              "backend/github-sync"
+              "backend/supabase-oauth"
             ]
           },
           {
             "group": "Publishing Your App",
             "pages": [
-              "publishing/code-export",
-              "publishing/xcode-setup",
+              "backend/download-code",
+              "publishing/expo-launch",
               "publishing/app-store",
               "publishing/google-play"
             ]

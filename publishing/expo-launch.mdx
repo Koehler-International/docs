@@ -1,0 +1,213 @@
+---
+title: "Publish with Expo Launch"
+description: "The easiest way to publish your app to the App Store and Play Store"
+---
+
+## Overview
+
+**Expo Launch** is the simplest way to publish your MobileCoder app to the App Store and Google Play Store. It handles all the technical configuration automatically — no Xcode, Android Studio, or prior knowledge needed.
+
+<Info>
+Expo Launch guides you through the entire process in your browser. All you need is your code and developer accounts.
+</Info>
+
+## Requirements
+
+Before you begin, make sure you have:
+
+- Your MobileCoder project code ([download it first](/publishing/code-export))
+- A **GitHub account** (free) — to upload your code
+- For iOS: **Apple Developer Account** ($99/year) — [Enroll here](https://developer.apple.com/programs/)
+- For Android: **Google Play Developer Account** ($25 one-time) — [Register here](https://play.google.com/console)
+
+## How Expo Launch Works
+
+Expo Launch simplifies the publishing process into 4 steps:
+
+1. **Upload your code** — Push your project to a GitHub repository
+2. **Connect to Expo Launch** — Enter your repo URL and let it analyze your app
+3. **Configure automatically** — Expo Launch handles signing, certificates, and build settings
+4. **Launch** — Your app is built and submitted to the stores
+
+## Step-by-Step Guide
+
+### Step 1: Prepare Your Project
+
+<Steps>
+<Step title="Download Your Code">
+
+If you haven't already, download your project from MobileCoder:
+
+1. Open your project in MobileCoder
+2. Click the **Download** button in the header
+3. Extract the ZIP file
+
+</Step>
+
+<Step title="Update App Configuration">
+
+Before publishing, update your app's configuration in `app.json`:
+
+```json
+{
+  "expo": {
+    "name": "Your App Name",
+    "slug": "your-app-slug",
+    "version": "1.0.0",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourapp"
+    },
+    "android": {
+      "package": "com.yourcompany.yourapp"
+    }
+  }
+}
+```
+
+<Info>
+The bundle identifier/package name must be unique. Use the format `com.companyname.appname`.
+</Info>
+
+</Step>
+
+<Step title="Push to GitHub">
+
+Create a new repository on GitHub and push your code:
+
+```bash
+cd your-project
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/yourusername/your-app.git
+git push -u origin main
+```
+
+</Step>
+</Steps>
+
+### Step 2: Launch with Expo
+
+<Steps>
+<Step title="Go to Expo Launch">
+
+Visit [launch.expo.dev](https://launch.expo.dev) in your browser.
+
+</Step>
+
+<Step title="Enter Your Repository URL">
+
+Paste your GitHub repository URL and click **Launch**.
+
+</Step>
+
+<Step title="Sign In">
+
+Connect your Expo account (create one if needed — it's free).
+
+</Step>
+
+<Step title="Configure Your App">
+
+Expo Launch will analyze your project and guide you through any required configuration. Most settings are handled automatically.
+
+</Step>
+
+<Step title="Connect Developer Accounts">
+
+For iOS, you'll connect your Apple Developer account. For Android, you'll connect your Google Play Console.
+
+</Step>
+
+<Step title="Launch">
+
+Click Launch and Expo will:
+- Build your app in the cloud
+- Handle code signing and certificates
+- Submit to the app stores
+
+</Step>
+</Steps>
+
+## What Expo Launch Handles
+
+| Task | Traditional Way | With Expo Launch |
+|------|----------------|------------------|
+| Code signing | Manual certificate management | Automatic |
+| Provisioning profiles | Download and configure in Xcode | Automatic |
+| Build configuration | Edit native project files | Automatic |
+| App Store submission | Archive and upload from Xcode | One click |
+| Play Store submission | Build APK/AAB, upload to Console | One click |
+
+## After Launch
+
+### iOS Apps
+
+After a successful iOS launch:
+- Your app is uploaded to **TestFlight**
+- You'll receive an invite to test your own app
+- From TestFlight, you can submit to the App Store
+
+### Android Apps
+
+After a successful Android launch:
+- Your app is uploaded to **Google Play Console**
+- You can release to internal testing or production
+- Configure your store listing in the Console
+
+## Publishing to Web
+
+Expo Launch also supports deploying your app as a website:
+
+1. Select **Launch to Web** on the Expo Launch page
+2. Your app is deployed using EAS Hosting
+3. Get a public URL instantly
+
+<Info>
+Web deployment uses the same React Native code — no modifications needed.
+</Info>
+
+## Updating Your App
+
+When you're ready to publish an update:
+
+1. Make changes in MobileCoder
+2. Download the updated code
+3. Push to the same GitHub repository
+4. Run Expo Launch again
+
+Your version number will increment automatically.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="code-branch" title="Repository not found">
+    Make sure your GitHub repository is public, or connect your GitHub account to Expo.
+  </Accordion>
+  <Accordion icon="key" title="Apple Developer account issues">
+    Ensure you have an active Apple Developer Program membership ($99/year). Free accounts cannot publish to the App Store.
+  </Accordion>
+  <Accordion icon="android" title="Google Play upload failing">
+    Verify your Google Play Developer account is fully set up and you've accepted all agreements.
+  </Accordion>
+  <Accordion icon="file-code" title="Build errors">
+    Check that your `app.json` is valid and all dependencies are correctly installed. Try running `npm install` locally first.
+  </Accordion>
+  <Accordion icon="certificate" title="Signing certificate issues">
+    Expo Launch handles certificates automatically. If you encounter issues, try revoking old certificates in your Apple Developer account.
+  </Accordion>
+</AccordionGroup>
+
+## Alternative: Traditional Publishing
+
+If you prefer more control, you can still publish traditionally:
+
+- **iOS**: Use Xcode on a Mac ([App Store guide](/publishing/app-store))
+- **Android**: Use Android Studio or `eas build` ([Play Store guide](/publishing/google-play))
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).
