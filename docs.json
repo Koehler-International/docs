@@ -17,7 +17,43 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart"
+              "quickstart",
+              "prompting-guide",
+              "agent-troubleshooting"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/live-preview",
+              "features/voice-input",
+              "features/image-attachments"
+            ]
+          },
+          {
+            "group": "Backend & Integrations",
+            "pages": [
+              "backend/do-you-need-backend",
+              "backend/supabase-integration",
+              "backend/supabase-oauth",
+              "backend/github-sync"
+            ]
+          },
+          {
+            "group": "Publishing Your App",
+            "pages": [
+              "publishing/code-export",
+              "publishing/xcode-setup",
+              "publishing/app-store",
+              "publishing/google-play"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq/general",
+              "faq/technical",
+              "faq/billing"
             ]
           }
         ]

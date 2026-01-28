@@ -1,0 +1,123 @@
+---
+title: "Agent Troubleshooting"
+description: "How to handle error loops, hallucinations, and get the AI agent back on track"
+---
+
+## When the AI Hallucinates
+
+Occasionally, the AI may generate output that is incorrect, incomplete, or not grounded in your actual project state. This is referred to as **hallucination**.
+
+Hallucinations usually appear as:
+
+- Referencing files, APIs, or features that don't exist
+- Claiming something was "fixed" when nothing changed
+- Repeating solutions that don't resolve the issue
+- Providing confident but incorrect instructions
+
+This is expected behavior in AI systems and does not indicate a broken project.
+
+## How to Resolve Hallucinations
+
+### 1. Ground the Model With Facts
+
+Provide **real, concrete inputs**:
+
+- Error logs
+- File contents
+- Build output
+- Exact error messages
+
+<Warning>
+Avoid vague prompts like "It's broken, fix it."
+</Warning>
+
+Instead use:
+
+> "Here is the full error output. Fix only what's causing this error."
+
+### 2. Constrain the Scope
+
+Tell the AI **exactly what it can and cannot change**.
+
+Examples:
+
+- "Only modify the home screen component."
+- "Do not add new libraries."
+- "Do not change the navigation structure."
+
+Clear constraints reduce hallucination significantly.
+
+### 3. Force Verification
+
+If the AI claims something is fixed, require confirmation.
+
+Use prompts like:
+
+- "Show me exactly what changed."
+- "Which file was modified and why?"
+- "Quote the line that fixes the error."
+
+If it cannot point to a real change, assume the fix is invalid.
+
+### 4. Reset the Context
+
+If hallucinations persist:
+
+- Start a **new message** with fresh context
+- Paste only the **relevant files or logs**
+- Restate the goal clearly
+
+Long conversations increase the chance of drift. Sometimes starting fresh is the fastest path forward.
+
+### 5. Use Images for Clarity
+
+If the issue is visual, **attach a screenshot** to your prompt:
+
+> "This button should be blue, but it's showing as red. See the attached screenshot."
+
+Visual context helps the AI understand exactly what needs to change.
+
+## When to Stop Iterating
+
+Stop prompting the AI if:
+
+- It repeats the same fix multiple times
+- It references non-existent files
+- It contradicts itself across responses
+
+At that point, consider:
+
+- Starting a new conversation
+- Simplifying your request
+- Breaking the problem into smaller pieces
+
+## Best Practices to Avoid Loops
+
+<AccordionGroup>
+  <Accordion icon="file-code" title="Always paste real logs">
+    Copy the actual error message or log output into your prompt. Don't paraphrase — the exact text matters.
+  </Accordion>
+  <Accordion icon="bullseye" title="Keep prompts short and specific">
+    Focus on one issue at a time. Multi-part prompts are more likely to cause confusion.
+  </Accordion>
+  <Accordion icon="check" title="Verify every claimed fix">
+    After the AI says something is fixed, test it. Don't assume the fix worked until you see it in the preview.
+  </Accordion>
+  <Accordion icon="scale-balanced" title="Treat AI output as a suggestion">
+    The AI is a powerful tool, but it's not infallible. Use your judgment to evaluate its suggestions.
+  </Accordion>
+</AccordionGroup>
+
+## Key Principle
+
+<Info>
+The AI is strongest when reacting to **real inputs**, not guessing missing context.
+</Info>
+
+Hallucinations are a signal that the AI needs **more constraints or better grounding**, not that your app is broken. Provide clearer context and try again.
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

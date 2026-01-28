@@ -1,0 +1,115 @@
+---
+title: "Technical FAQ"
+description: "Technical questions about building with MobileCoder"
+---
+
+## Are MobileCoder apps actually native iOS/Android apps?
+
+Yes, MobileCoder apps are fully native apps built with **React Native** and powered by **Expo**. They work on both iOS and Android devices and can be published to both app stores.
+
+React Native is the same framework used by Discord, Shopify, Coinbase, Instagram, and nearly 30% of the top 100 apps on the App Store. It's not a web view — it's truly native.
+
+---
+
+## Can I build production-ready apps?
+
+Yes. MobileCoder uses a production-ready tech stack. You can publish simple apps directly to the App Store or Google Play.
+
+For complex features, you can:
+
+- Download your code and continue in Xcode
+- Hire a developer to add custom functionality
+- Use the exported code as a starting point
+
+---
+
+## Does it work on iOS and Android?
+
+Yes! MobileCoder builds cross-platform apps that work on both iOS and Android from a single codebase. The same project can be published to both the App Store and Google Play Store.
+
+---
+
+## Can I build a web app?
+
+MobileCoder focuses on mobile apps, but Expo apps can also run on the web. After exporting your code, you can deploy the web version to platforms like Vercel or Netlify.
+
+See [Expo's guide on hosting web apps](https://docs.expo.dev/guides/publishing-websites/) for more details.
+
+---
+
+## What happens when my sandbox expires?
+
+Sandboxes automatically pause after a period of inactivity (typically 20 minutes) to save resources. When you return to your project:
+
+1. The sandbox automatically resumes
+2. Your code is restored from GitHub
+3. The preview becomes available again
+
+This usually takes just a few seconds. Your code is never lost.
+
+---
+
+## Can I use custom npm packages?
+
+Yes. You can ask MobileCoder to install any npm package:
+
+> "Install the react-native-maps package"
+
+The AI will install the package and integrate it into your project.
+
+<Info>
+Some packages with native dependencies may require additional configuration after exporting to Xcode.
+</Info>
+
+---
+
+## What APIs and services can I integrate?
+
+MobileCoder can integrate with any API that has a REST or GraphQL interface:
+
+- **AI services** — OpenAI, Anthropic, etc.
+- **Payment** — Stripe, RevenueCat
+- **Analytics** — Mixpanel, Amplitude
+- **Maps** — Google Maps, Mapbox
+- **Social** — Firebase, Supabase
+- **Any REST API** — Weather, stocks, etc.
+
+Just describe what you want to integrate, and the AI will handle the implementation.
+
+---
+
+## What are the file size limits?
+
+| Content | Limit |
+|---------|-------|
+| Image attachments | 5MB per image |
+| Voice recordings | 25MB per recording |
+| Project size | No hard limit |
+
+---
+
+## Can I use TypeScript?
+
+Yes! All MobileCoder projects use **TypeScript** by default. The AI generates type-safe code that catches errors early and provides better IDE support.
+
+---
+
+## What version of Expo does MobileCoder use?
+
+MobileCoder uses **Expo SDK 54+**, which includes the latest features and security updates. Projects are kept up to date with current best practices.
+
+---
+
+## Can I eject from Expo?
+
+After exporting your code, you have full control. You can:
+
+- Run `npx expo prebuild` to generate native projects
+- Modify native iOS/Android code directly
+- Add native modules not supported by Expo
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

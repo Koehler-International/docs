@@ -1,0 +1,193 @@
+---
+title: "Social Sign-In with Supabase"
+description: "Add Sign in with Apple and Google to your MobileCoder app using Supabase Auth"
+---
+
+## Overview
+
+Adding social sign-in (Apple, Google) to your app provides a seamless authentication experience for users. This guide walks you through setting up OAuth providers with Supabase and integrating them into your MobileCoder app.
+
+<Warning>
+Before starting, make sure you've [connected Supabase](/backend/supabase-integration) to your MobileCoder project.
+</Warning>
+
+## Prerequisites
+
+You'll need:
+
+- A connected **Supabase project**
+- Access to **Google Cloud Console** (for Google OAuth)
+- An **Apple Developer account** (for Sign in with Apple)
+
+---
+
+## Setting Up Google Sign-In
+
+### Step 1: Create Google OAuth Credentials
+
+<Steps>
+<Step title="Open Google Cloud Console">
+
+Go to [Google Cloud Console](https://console.cloud.google.com/) and select or create a project.
+
+</Step>
+
+<Step title="Create OAuth Client">
+
+Navigate to **APIs & Services → Credentials → Create Credentials → OAuth Client ID**.
+
+Choose **Web application** as the application type.
+
+</Step>
+
+<Step title="Configure Redirect URI">
+
+In Supabase, go to **Authentication → Providers → Google** and copy the **Callback URL**.
+
+Add this URL to the **Authorized redirect URIs** in Google Cloud Console.
+
+</Step>
+
+<Step title="Copy Credentials">
+
+Copy the **Client ID** and **Client Secret** from Google Cloud Console.
+
+</Step>
+</Steps>
+
+### Step 2: Configure Supabase
+
+1. In Supabase, go to **Authentication → Providers → Google**
+2. Enable the Google provider
+3. Paste your **Client ID** and **Client Secret**
+4. Save the configuration
+
+### Step 3: Add to Your App
+
+In MobileCoder, prompt:
+
+> "Add Google sign-in to the app using Supabase Auth."
+
+The AI will implement the complete Google OAuth flow.
+
+---
+
+## Setting Up Apple Sign-In
+
+### Step 1: Configure Apple Developer
+
+<Steps>
+<Step title="Enable Sign in with Apple">
+
+In [Apple Developer](https://developer.apple.com/), go to **Identifiers** and select your App ID.
+
+Enable the **Sign in with Apple** capability.
+
+</Step>
+
+<Step title="Create a Key">
+
+Go to **Keys → Add Key**.
+
+Enable **Sign in with Apple** and configure it for your app.
+
+Register the key and **download it** — you'll need this file.
+
+</Step>
+
+<Step title="Note Your Bundle ID">
+
+Copy your app's **Bundle ID** from the Identifiers section.
+
+</Step>
+</Steps>
+
+### Step 2: Configure Supabase
+
+1. In Supabase, go to **Authentication → Providers → Apple**
+2. Enable the Apple provider
+3. Enter your **Bundle ID** as the Client ID
+4. Upload or paste your key file contents
+5. Save the configuration
+
+### Step 3: Add to Your App
+
+In MobileCoder, prompt:
+
+> "Add Apple sign-in to the app using Supabase Auth. Use native Sign in with Apple, not a web browser."
+
+<Info>
+Specifying "native" ensures the AI uses the iOS Sign in with Apple sheet instead of a web-based flow.
+</Info>
+
+---
+
+## Adding Both Providers
+
+To add both Google and Apple sign-in at once:
+
+> "Add sign-in with Google and Apple using Supabase Auth. For Apple, use native Sign in with Apple."
+
+The AI will create a sign-in screen with both options and handle all the authentication logic.
+
+---
+
+## Testing Authentication
+
+### Enable User Signups
+
+In Supabase, go to **Authentication → Settings → User Signups** and make sure new users can sign up.
+
+### Test the Flow
+
+1. Run your app in the preview or on a device
+2. Tap the Google or Apple sign-in button
+3. Complete the OAuth flow
+4. Check Supabase's **Authentication → Users** to see the new user
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="globe" title="Google opens Safari and fails">
+    Make sure user signups are enabled in Supabase Auth settings. Also verify your redirect URI matches exactly.
+  </Accordion>
+  <Accordion icon="apple" title="Apple says 'missing OAuth secret'">
+    This usually means the flow is using web-based OAuth instead of native. Prompt MobileCoder to "redo Apple sign-in as native only."
+  </Accordion>
+  <Accordion icon="user-slash" title="User not appearing in Supabase">
+    Check if there are any errors in the browser console. Ensure the OAuth providers are correctly configured with valid credentials.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Prompt Templates
+
+### Add Google Sign-In
+```text
+Add a sign-in page with Google authentication using Supabase Auth.
+```
+
+### Add Apple Sign-In (Native)
+```text
+Add Sign in with Apple using Supabase Auth. Use native authentication, not a web browser.
+```
+
+### Add Both Providers
+```text
+Add a sign-in screen with Google and Apple authentication using Supabase. 
+Use native Sign in with Apple on iOS.
+```
+
+### Fix Apple to Native
+```text
+Redo Apple sign-in as native only. Do not use a web browser for Apple sign-in.
+```
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

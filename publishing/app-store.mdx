@@ -1,0 +1,181 @@
+---
+title: "Publish to App Store"
+description: "Submit your MobileCoder app to Apple's App Store"
+---
+
+## Overview
+
+This guide walks you through publishing your MobileCoder app to the Apple App Store. You'll need a Mac with Xcode and an Apple Developer account.
+
+<Warning>
+Before starting, make sure you've completed the [Xcode Setup](/publishing/xcode-setup) guide.
+</Warning>
+
+## Prerequisites
+
+- **Apple Developer Account** ($99/year) — [Enroll here](https://developer.apple.com/programs/)
+- **Xcode** installed and configured
+- Your MobileCoder project code downloaded
+- App icon and screenshots ready
+
+## Step 1: Prepare Your App
+
+### Update App Information
+
+Before building, update your app's configuration:
+
+1. Open your project in MobileCoder
+2. Update the **app name** and **bundle identifier**
+3. Set your **app icon**
+
+Or edit `app.json` directly after downloading:
+
+```json
+{
+  "expo": {
+    "name": "Your App Name",
+    "slug": "your-app-slug",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourapp"
+    }
+  }
+}
+```
+
+<Info>
+The bundle identifier must be unique and typically follows the format `com.companyname.appname`.
+</Info>
+
+### Generate an App Icon
+
+If you don't have an app icon, ask MobileCoder:
+
+> "Generate an app icon for my app."
+
+The AI will create and integrate an appropriate icon.
+
+## Step 2: Create App in App Store Connect
+
+<Steps>
+<Step title="Open App Store Connect">
+
+Go to [App Store Connect](https://appstoreconnect.apple.com/) and sign in with your Apple ID.
+
+</Step>
+
+<Step title="Create New App">
+
+Click the **+** button and select **New App**.
+
+</Step>
+
+<Step title="Fill in Details">
+
+- **Platform**: iOS
+- **Name**: Your app's display name
+- **Primary Language**: Your app's language
+- **Bundle ID**: Must match your `app.json`
+- **SKU**: A unique identifier (can be anything)
+
+</Step>
+
+<Step title="Save">
+
+Click **Create** to set up your app in App Store Connect.
+
+</Step>
+</Steps>
+
+## Step 3: Build and Upload
+
+### Build in Xcode
+
+1. Open your project in Xcode (see [Xcode Setup](/publishing/xcode-setup))
+2. Select **Any iOS Device** from the device dropdown
+3. Go to **Product → Archive**
+4. Wait for the build to complete
+
+### Upload to App Store Connect
+
+1. When archiving completes, the **Organizer** window opens
+2. Select your archive and click **Distribute App**
+3. Choose **App Store Connect** → **Upload**
+4. Follow the prompts to sign and upload
+
+<Info>
+You may be asked for a verification code from your Apple devices during upload.
+</Info>
+
+## Step 4: Complete App Store Listing
+
+In App Store Connect, you need to provide:
+
+### App Information
+
+- Description
+- Keywords
+- Support URL
+- Marketing URL (optional)
+
+### Screenshots
+
+Upload screenshots for each device size:
+
+- iPhone 6.7" (required)
+- iPhone 6.5" (required)
+- iPhone 5.5" (required for older devices)
+- iPad (if your app supports iPad)
+
+### App Review Information
+
+- Contact information for the review team
+- Demo account credentials (if your app requires login)
+- Notes for the reviewer
+
+### Pricing and Availability
+
+- Select price tier (or Free)
+- Choose which countries to release in
+
+## Step 5: Submit for Review
+
+1. Go to your app in App Store Connect
+2. Select the build you uploaded
+3. Complete all required fields
+4. Click **Submit for Review**
+
+## App Review Timeline
+
+<AccordionGroup>
+  <Accordion icon="clock" title="How long does review take?">
+    Most apps are reviewed within 24-48 hours. Complex apps or those with issues may take longer.
+  </Accordion>
+  <Accordion icon="rotate" title="What if I get rejected?">
+    Apple will explain the reason. Fix the issues and resubmit. Common reasons include missing privacy policies, crashes, or incomplete features.
+  </Accordion>
+  <Accordion icon="bolt" title="Can I request expedited review?">
+    Yes, for critical bug fixes. Go to App Store Connect → Contact Us → Request Expedited Review.
+  </Accordion>
+</AccordionGroup>
+
+## Common Rejection Reasons
+
+- **Missing privacy policy**: Add a privacy policy URL
+- **Crashes or bugs**: Test thoroughly before submitting
+- **Incomplete features**: All features must work as described
+- **Placeholder content**: Remove any placeholder text or images
+- **Login issues**: Provide test credentials if login is required
+
+## After Approval
+
+Once approved, your app will be available on the App Store. You can:
+
+- Monitor downloads and revenue in App Store Connect
+- Respond to user reviews
+- Submit updates with new features
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

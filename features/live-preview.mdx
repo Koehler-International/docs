@@ -1,0 +1,104 @@
+---
+title: "Live Preview"
+description: "Test your app in real-time with browser preview and on your physical device using Expo Go"
+---
+
+## How Live Preview Works
+
+MobileCoder provides a **live preview** of your app that updates in real-time as the AI builds your code. You can test your app directly in the browser or on your physical device.
+
+The preview runs in a cloud sandbox powered by Expo, giving you an authentic mobile experience without needing to install any development tools locally.
+
+## Testing in the Browser
+
+The browser preview shows your app in a simulated phone frame. This is the fastest way to see changes and test basic functionality.
+
+**Browser preview is great for:**
+
+- Quick visual checks
+- Testing navigation flows
+- Verifying layout and styling
+- Rapid iteration
+
+<Info>
+Some native features may not work in the browser preview. For the most accurate testing, use the Expo Go app on your physical device.
+</Info>
+
+## Testing on Your Device with Expo Go
+
+For the most accurate testing experience, scan the QR code to open your app in **Expo Go** on your phone.
+
+<Steps>
+<Step title="Install Expo Go">
+
+Download the Expo Go app from the [App Store](https://apps.apple.com/app/expo-go/id982107779) (iOS) or [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent) (Android).
+
+</Step>
+
+<Step title="Scan the QR Code">
+
+In MobileCoder, click the **QR code** icon in the preview panel. Use your phone's camera (iOS) or the Expo Go app (Android) to scan the code.
+
+</Step>
+
+<Step title="Test Your App">
+
+Your app will open in Expo Go with full native functionality. Changes made in MobileCoder will automatically refresh in the app.
+
+</Step>
+</Steps>
+
+## Preview States
+
+The preview panel shows the current state of your sandbox:
+
+| State | Description |
+|-------|-------------|
+| **Idle** | No preview active. Start building to see the preview. |
+| **Starting** | The sandbox is initializing. This usually takes a few seconds. |
+| **Ready** | Your app is running and ready to test. |
+| **Paused** | The sandbox has been paused due to inactivity. It will auto-resume when you return. |
+| **Agent Running** | The AI is actively working on your code. The preview will update when complete. |
+
+## Sandbox Expiration and Auto-Resume
+
+To save resources, MobileCoder **pauses sandboxes** after a period of inactivity (typically 20 minutes). When you return to your project:
+
+1. The sandbox will automatically resume
+2. Your code is restored from the saved state
+3. The preview will be available again in a few seconds
+
+<Note>
+Your code is automatically saved to GitHub, so you never lose your work even if the sandbox expires.
+</Note>
+
+## Preview Limitations
+
+While the live preview is powerful, there are some limitations to be aware of:
+
+- **Native modules**: Some native iOS/Android features may not work in the browser preview
+- **Push notifications**: Require a physical device and proper setup
+- **Camera/sensors**: Hardware features require a physical device
+- **Performance**: The browser preview may be slower than a native build
+
+For production testing, we recommend [exporting your code](/publishing/code-export) and building a native app.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="circle-exclamation" title="Preview not loading">
+    Try refreshing the page or clicking the restart button in the preview panel. If the issue persists, check if the AI is still working on your code.
+  </Accordion>
+  <Accordion icon="qrcode" title="QR code not scanning">
+    Make sure you have Expo Go installed. On iOS, use the native camera app. On Android, use the Expo Go app's scanner.
+  </Accordion>
+  <Accordion icon="clock" title="Preview shows 'Paused'">
+    Click anywhere in the preview panel or send a new message to resume your sandbox.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

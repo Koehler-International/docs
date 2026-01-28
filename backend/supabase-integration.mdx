@@ -1,0 +1,155 @@
+---
+title: "Supabase Integration"
+description: "Connect your Supabase project to MobileCoder for database, auth, and storage"
+---
+
+## Overview
+
+MobileCoder has **native Supabase integration** that makes adding a backend to your app incredibly simple. Unlike manual setups, you can connect your Supabase project with OAuth — no API keys to copy, no configuration files to edit.
+
+Once connected, MobileCoder's AI can:
+
+- Create database tables and schemas
+- Set up authentication flows
+- Design Row Level Security policies
+- Manage storage buckets
+- Write all the backend code for you
+
+## What is Supabase?
+
+[Supabase](https://supabase.com) is an open-source backend platform that provides:
+
+- **Database**: PostgreSQL database for storing your app data
+- **Auth**: User authentication with email, social logins, and more
+- **Storage**: File storage for images, videos, and documents
+- **Edge Functions**: Serverless functions for custom logic
+
+## Connecting Supabase to MobileCoder
+
+<Steps>
+<Step title="Create a Supabase Account">
+
+If you don't have one, go to [supabase.com](https://supabase.com) and create a free account.
+
+</Step>
+
+<Step title="Create a New Project">
+
+In Supabase, create a new project. Choose a name, region (closest to your users), and set a database password.
+
+</Step>
+
+<Step title="Connect via OAuth">
+
+In MobileCoder, open the **Supabase Manager** panel and click **Connect Supabase**. You'll be redirected to Supabase to authorize the connection.
+
+</Step>
+
+<Step title="Select Your Project">
+
+After authorizing, select which Supabase project you want to connect to your MobileCoder project.
+
+</Step>
+</Steps>
+
+<Info>
+The OAuth connection is secure — MobileCoder never sees your Supabase password. Tokens are encrypted and automatically refresh.
+</Info>
+
+## Using the Supabase Manager
+
+Once connected, you can access the **Supabase Manager** directly in MobileCoder:
+
+### Database Tables
+
+View and browse your database tables. See the structure, columns, and data types at a glance.
+
+### SQL Editor
+
+Execute SQL queries directly from MobileCoder. Great for:
+
+- Viewing data
+- Running custom queries
+- Debugging issues
+
+### Users Management
+
+View and manage authenticated users in your app.
+
+### Storage Browser
+
+Browse files in your Supabase Storage buckets.
+
+### Secrets
+
+Manage environment variables and secrets securely.
+
+## How the AI Uses Supabase
+
+When Supabase is connected, MobileCoder's AI automatically knows about your database and can:
+
+### Design Database Schemas
+
+> "Add a feature to save user favorites. Users should be able to favorite any product."
+
+The AI will create the necessary tables, columns, and relationships.
+
+### Create Row Level Security
+
+The AI sets up proper security policies so users can only access their own data.
+
+### Handle Authentication
+
+> "Add login with email and password."
+
+The AI will implement the full auth flow using Supabase Auth.
+
+### Store Files
+
+> "Let users upload a profile picture."
+
+The AI will configure storage buckets and handle file uploads.
+
+## Example: Building a Social App
+
+Here's how a conversation might go:
+
+**You:** "Create a social app where users can post updates and follow other users."
+
+**MobileCoder:** Creates the UI and asks if you want to connect Supabase.
+
+**You:** Connect Supabase via OAuth.
+
+**MobileCoder:** Creates tables for users, posts, and follows. Sets up authentication. Implements the follow/unfollow logic with proper RLS policies.
+
+All of this happens automatically because MobileCoder understands your Supabase project.
+
+## Disconnecting Supabase
+
+If you need to disconnect or switch to a different Supabase project:
+
+1. Open the Supabase Manager
+2. Click the settings/disconnect option
+3. Confirm the disconnection
+
+You can reconnect at any time with a different project.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="link-slash" title="Connection failed">
+    Make sure you're logged into Supabase and have at least one project. Try disconnecting and reconnecting.
+  </Accordion>
+  <Accordion icon="clock" title="Changes not appearing">
+    The Supabase Manager may need to refresh. Click the refresh button or wait a few seconds for data to sync.
+  </Accordion>
+  <Accordion icon="lock" title="Permission errors">
+    Check that your Supabase project's Row Level Security policies allow the operations you're trying to perform.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

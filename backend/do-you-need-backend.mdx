@@ -1,0 +1,176 @@
+---
+title: "Do You Need a Backend?"
+description: "Learn when your app requires a backend and when you can skip it entirely"
+---
+
+## Overview
+
+MobileCoder helps you build beautiful mobile applications. But not every app needs a backend. This guide helps you understand when you need server-side functionality and when you can keep things simple.
+
+**Frontend** = The user-facing parts of your app (screens, buttons, interactions)
+
+**Backend** = Server-side functionality (user accounts, data sync, file storage)
+
+By the end of this guide, you'll know exactly which category your idea falls into.
+
+---
+
+## Apps That Don't Need a Backend
+
+### 1. Local-Only Apps
+
+These apps store all data on the user's device. No sync needed. No logins required.
+
+**Examples:**
+
+- Todo lists
+- Notes apps
+- Journals
+- Habit trackers
+- Mood logs
+- Calculators
+- Timers
+- Unit converters
+- Offline flashcards
+
+MobileCoder can build all of these with **no backend at all**, using local storage that persists on the device.
+
+<Info>
+If your app isn't saving data locally, just ask MobileCoder: **"Please make sure the data is being stored locally and persists."**
+</Info>
+
+### 2. Apps With Temporary Data
+
+Apps that don't need to remember anything after they close.
+
+**Examples:**
+
+- Drawing apps
+- Mini-games
+- AI generators (without history)
+- Fun tools that create something but don't save it
+
+If nothing needs to persist after the app closes, no backend is needed.
+
+### 3. Apps That Only Call External APIs
+
+If your app just sends requests to external services (like OpenAI, weather APIs, etc.) and displays the results:
+
+**You do not need a backend.**
+
+You're just making API requests directly from the app.
+
+Backend becomes optional only when:
+
+- You want to save user history
+- You want personalization
+- You want usage tracking
+
+---
+
+## Apps That Always Need a Backend
+
+### 1. Apps With User Accounts
+
+If users "have an account," you need:
+
+- Authentication
+- Storing user data
+- Syncing across devices
+
+**Examples:**
+
+- Social apps
+- Productivity apps with cloud sync
+- Finance apps
+- Any multi-device workflow
+
+### 2. Apps That Sync Across Devices
+
+A user writes a note on their phone and expects it on their tablet. That requires:
+
+- A database
+- Cloud sync
+- Persistent server-side storage
+
+### 3. Apps With Sharing or Collaboration
+
+If more than one person can see, edit, or interact with the same data:
+
+- Messaging
+- Social feeds
+- Comments
+- Real-time collaboration
+- Multiplayer features
+
+All of this needs a backend.
+
+### 4. Apps That Store Files
+
+If your app handles user-uploaded files (images, videos, PDFs) and these need to persist across devices, you need cloud storage.
+
+Local storage won't work for sharable content.
+
+### 5. Apps With Security Rules
+
+If the app enforces rules between users:
+
+- Blocking
+- Moderation
+- Rate limiting
+- Access control
+
+Client-only apps can't enforce security rules. A backend is required.
+
+---
+
+## Gray-Zone Apps (Optional Backend)
+
+### Local-First Apps With Optional Sync
+
+Some apps work great without a backend initially, then add cloud features later.
+
+**Examples:**
+
+- Journal → adds cloud backup later
+- Notes app → adds multi-device sync later
+- Photo editor → adds sharing later
+
+You can ship v1 with no backend and add sync when you're ready.
+
+### AI Apps With Memory
+
+You can choose:
+
+- **Local-only memory** → no backend
+- **Cloud memory across devices** → backend
+- **Personalized AI** → backend
+
+Start simple with local storage; add cloud features when you have users.
+
+---
+
+## Good News: MobileCoder Makes Backends Easy
+
+If you do need a backend, MobileCoder has **native Supabase integration** that makes it incredibly simple.
+
+Unlike manual setups that require configuring API keys and writing boilerplate code, MobileCoder lets you:
+
+- Connect your Supabase project with one click (OAuth)
+- Manage your database directly in MobileCoder
+- Let the AI automatically design schemas for your features
+- Handle authentication without complex setup
+
+<Card
+  title="Set Up Supabase"
+  icon="database"
+  href="/backend/supabase-integration"
+>
+  Learn how to connect Supabase to your MobileCoder project.
+</Card>
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).

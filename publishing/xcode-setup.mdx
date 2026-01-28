@@ -1,0 +1,224 @@
+---
+title: "Xcode Setup"
+description: "Set up your development environment to build and publish iOS apps"
+---
+
+## Overview
+
+To publish your MobileCoder app to the App Store, you'll need to use Xcode on a Mac. This guide walks you through the required setup, opening your project, and troubleshooting common issues.
+
+## Requirements
+
+Before you begin, make sure you have:
+
+- A **Mac** computer (Xcode only runs on macOS)
+- **Xcode** installed from the App Store
+- An **Apple Developer Account** ($99/year for App Store publishing)
+- Your project code (downloaded from MobileCoder)
+
+## Installing Xcode
+
+1. Open the **App Store** on your Mac
+2. Search for "Xcode"
+3. Click **Get** to download and install
+
+<Info>
+Xcode is a large download (over 10GB). Make sure you have enough disk space and a stable internet connection.
+</Info>
+
+## Setting Up Your Environment
+
+Open Terminal and run these commands to install the required development tools:
+
+### Install Homebrew
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Install Node.js
+
+```bash
+brew install node
+```
+
+Verify the installation:
+
+```bash
+node -v
+npm -v
+```
+
+### Install Yarn
+
+```bash
+npm install -g yarn
+```
+
+### Install Expo CLI
+
+```bash
+npm install -g expo
+```
+
+### Install Xcode Command Line Tools
+
+```bash
+xcode-select --install
+```
+
+Accept the license:
+
+```bash
+sudo xcodebuild -license accept
+```
+
+### Install CocoaPods
+
+```bash
+sudo gem install cocoapods
+```
+
+Verify:
+
+```bash
+pod --version
+```
+
+## Opening Your Project in Xcode
+
+<Steps>
+<Step title="Download Your Project">
+
+Download your project from MobileCoder and extract the ZIP file.
+
+</Step>
+
+<Step title="Install Dependencies">
+
+Open Terminal, navigate to your project folder, and install dependencies:
+
+```bash
+cd your-project
+yarn install
+```
+
+</Step>
+
+<Step title="Generate iOS Project">
+
+Run Expo prebuild to generate the native iOS project:
+
+```bash
+npx expo prebuild -p ios
+```
+
+</Step>
+
+<Step title="Open in Xcode">
+
+Open the generated iOS project:
+
+```bash
+xed ios
+```
+
+</Step>
+</Steps>
+
+## Building and Running
+
+### Run in Simulator
+
+1. In Xcode, select a simulator from the device dropdown
+2. Click the **Play** button or press `Cmd+R`
+3. Your app will build and launch in the simulator
+
+### Run on Physical Device
+
+1. Connect your iPhone via USB
+2. Select your device from the dropdown
+3. You may need to trust your development certificate on the device
+4. Click **Play** to build and install
+
+## Publishing to TestFlight
+
+<Steps>
+<Step title="Select Generic iOS Device">
+
+In Xcode, select **Any iOS Device** from the device dropdown.
+
+</Step>
+
+<Step title="Archive Your App">
+
+Go to **Product → Archive**. This creates a release build.
+
+</Step>
+
+<Step title="Distribute to App Store Connect">
+
+When the archive completes, the Organizer window opens. Click **Distribute App** and follow the prompts.
+
+</Step>
+
+<Step title="Test via TestFlight">
+
+Once uploaded, your app appears in App Store Connect. Add testers to TestFlight to try your app before public release.
+
+</Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="folder" title="iOS folder already exists">
+    Run prebuild with the clean flag:
+    ```bash
+    npx expo prebuild -p ios --clean
+    ```
+  </Accordion>
+  <Accordion icon="box-archive" title="Dependencies or Pods broken">
+    Reset everything and rebuild:
+    ```bash
+    rm -rf node_modules ios
+    yarn install
+    npx expo prebuild -p ios
+    ```
+  </Accordion>
+  <Accordion icon="gem" title="CocoaPods failing">
+    Reset CocoaPods:
+    ```bash
+    cd ios
+    pod deintegrate
+    pod install
+    cd ..
+    ```
+  </Accordion>
+  <Accordion icon="triangle-exclamation" title="Signing issues">
+    In Xcode, go to **Signing & Capabilities** and make sure your team is selected. You may need to sign in with your Apple ID.
+  </Accordion>
+  <Accordion icon="lock" title="Lock file issues">
+    Delete lock files and regenerate:
+    ```bash
+    rm -rf package-lock.json yarn.lock node_modules
+    yarn install
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Verify Your Setup
+
+Run this command to check all tools are installed:
+
+```bash
+node -v && npm -v && yarn -v && npx expo --version && pod --version
+```
+
+You should see version numbers for each tool.
+
+---
+
+## Need more help?
+
+Still have questions? Contact us at [support@mobilecoder.ai](mailto:support@mobilecoder.ai).
